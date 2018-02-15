@@ -7,6 +7,14 @@ query($id: ID!) {
     name
     where
     when
-    description  
+    description
+    comments {
+      __typename
+      items {
+        commentId
+        content
+        createdAt
+      }
+    }
   }
 }`);

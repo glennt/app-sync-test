@@ -13,5 +13,10 @@ mutation($name: String! $when: String! $where: String! $description: String!) {
     where
     when
     description
+    comments {
+      items {
+        commentId
+      }
+    }
   }
 }`);

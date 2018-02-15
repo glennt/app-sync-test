@@ -7,6 +7,11 @@ mutation($id: ID!) {
     name
     where
     when
-    description  
+    description
+    comments {
+      items {
+        commentId
+      }
+    }
   }
 }`);
