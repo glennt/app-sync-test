@@ -34,7 +34,6 @@ class App extends Component {
             when: this.state.when,
             description: this.state.description
         }
-
         createEvent(event);
 
         this.setState({
@@ -47,9 +46,10 @@ class App extends Component {
 
   render() {
 
+    var key = 0;
     var events = this.props.events.map((event) => {
         return (
-            <div className="App-item">
+            <div className="App-item" key={key++}> 
                 <li>id: {event.id}</li>
                 <li>name: {event.name}</li>
                 <li>where: {event.where}</li>

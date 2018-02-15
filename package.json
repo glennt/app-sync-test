@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "aws-appsync": "^1.0.10",
+    "baobab": "^2.5.0",
+    "baobab-react": "^3.0.0",
     "graphql-tag": "^2.7.3",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
