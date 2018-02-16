@@ -5,9 +5,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { root } from 'baobab-react/higher-order';
 import tree from './state/tree';
+import {initClient} from './actions/actions';
 
 const RootedApp = root(tree, App);
 
-
-ReactDOM.render(<RootedApp />, document.getElementById('root'));
-registerServiceWorker();
+initClient().then(() => {
+    ReactDOM.render(<RootedApp />, document.getElementById('root'));
+    registerServiceWorker();
+});
