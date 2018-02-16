@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { branch } from 'baobab-react/higher-order';
-import { loadEvents, createEvent } from './actions/actions';
 
 class App extends Component {
 
@@ -17,7 +16,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        loadEvents();
+      
     }
 
     handleFieldOnChange(field, e) {
@@ -33,8 +32,9 @@ class App extends Component {
             where: this.state.where,
             when: this.state.when,
             description: this.state.description
-        }
-        createEvent(event);
+        }      
+
+        this.props.createEvent(event);
 
         this.setState({
             name: '',
