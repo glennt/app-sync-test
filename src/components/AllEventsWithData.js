@@ -36,12 +36,15 @@ export default compose(
             },
             props: (props) => ({
                 createEvent: (event) => {
+                    
+                    event.id = uuid();
+                    event['__typename'] = 'Event';
+                    event.comments = { __typename: 'CommentConnection', items: [] };
+
                     return props.mutate({
                         variables: event,
                         optimisticResponse: () => ({
-                            createEvent: {
-                                ...event, id: uuid(), __typename: 'Event', comments: { __typename: 'CommentConnection', items: [] }
-                            }
+                            createEvent: event
                         }),
                     })
                 }

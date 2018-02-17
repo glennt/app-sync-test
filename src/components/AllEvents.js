@@ -18,6 +18,8 @@ class AllEvents extends Component {
       
     }
 
+ 
+
     handleFieldOnChange(field, e) {
         var obj = {};
         obj[field] = e.target.value;
@@ -98,7 +100,7 @@ class AllEvents extends Component {
                     </tr>
                 </tbody>
             </table>
-            <input type="button" value="Button" onClick={this.handleCreateClick.bind(this)} />
+            <input type="button" value="Add Event" onClick={this.handleCreateClick.bind(this)} />
         </div>
         <p>Events</p>
           <div>{events}</div>
